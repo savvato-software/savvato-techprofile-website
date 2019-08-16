@@ -1,0 +1,5 @@
+
+
+ionic cordova build browser --release    # build the content for the webserver to put the app on the internet
+
+

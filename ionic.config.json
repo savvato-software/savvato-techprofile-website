@@ -1,5 +1,7 @@
 {
   "name": "dtim-techprofile-browser",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

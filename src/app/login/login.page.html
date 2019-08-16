@@ -1,0 +1,37 @@
+
+<ion-content padding>
+	<ion-grid>
+		<ion-row>
+			<ion-col>
+				<img id="login-logo-img" data-test="login-logo-img" src="assets/img/dtim-banner.jpg">
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<ion-label color="primary" position="stacked">Username</ion-label>
+				<ion-input type="text" [(ngModel)]="user.name" #ctrl="ngModel" (keyup.enter)="onLoginBtnTap($event)" data-test="usernameInput" required="true"></ion-input>
+
+				<ion-label color="primary" position="stacked">Password</ion-label>
+				<ion-input type="password" [(ngModel)]="user.password" #ctrl="ngModel" (keyup.enter)="onLoginBtnTap($event)"  data-test="passwordInput" required="true"></ion-input>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<ion-button class="wideButton" data-test="login-button" (click)="onLoginBtnTap($event)">Login</ion-button>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<ion-button class="wideButton"  data-test="create-account-button" (click)="onCreateAccountBtnTap($event)">Create Account</ion-button>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<div id="lostPasswordBtn">
+					<ion-button class="wideButton"  data-test="lost-password-button" (click)="onLostPasswordClick($event)">Lost Your Password?</ion-button>
+				</div>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>
+

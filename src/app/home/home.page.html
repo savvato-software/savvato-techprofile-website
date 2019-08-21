@@ -1,14 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+	<ion-grid>
+		<ion-row>
+			<ion-col>
+				<img id="login-logo-img" data-test="login-logo-img" src="assets/img/dtim-banner.jpg">
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<ion-button class="wideButton" data-test="show-your-profile-button" (click)="onShowYourProfileBtnTap($event)">Show Your Profile</ion-button>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<ion-button class="wideButton"  data-test="change-your-info-button" (click)="onChangeYourInfoBtnTap($event)">Change Your Info</ion-button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 </ion-content>
+

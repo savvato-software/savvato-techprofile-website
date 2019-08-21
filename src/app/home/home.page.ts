@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private _router : Router) {
+
+  }
+
+  onChangeYourInfoBtnTap($event) {
+  	this._router.navigate(['/edit-user-info'])
+  }
+
+  onShowYourProfileBtnTap($event) {
+	this._router.navigate(['/profile'])
+  }
 
 }

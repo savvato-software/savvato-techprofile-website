@@ -29,8 +29,8 @@ export class LoginPage {
               // private splashScreen: SplashScreen,
               private _events: Events) {
 
-              if ( !environment.production )
-                this.user = {id:-1, name: 'eoguser2', password: 'password'};
+              // if ( !environment.production )
+              //  this.user = {id:-1, name: 'eoguser2', password: 'password'};
   }
 
   ionViewWillEnter() {
@@ -105,7 +105,7 @@ export class LoginPage {
         header: "Enter your phone number or email address. We'll send you a code.",
         inputs: [{
           name: 'phoneNumber',
-          placeholder: '..10 digit phone number or email address..',
+          placeholder: '..10 digit phone number..',
           type: 'number'
         }],
         buttons: [{

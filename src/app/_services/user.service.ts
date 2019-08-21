@@ -14,37 +14,9 @@ export class UserService {
 
   }
 
-  createNewUser(name, phone, email) {
-  	let url = environment.apiUrl + "/api/candidate/new";
-  	let data = "name=" + name;
-
-  	if (phone) {
-  		data += "&phone=" + phone;
-  	}
-
-  	if (email) {
-  		data += "&email=" + email;
-  	}
-
-	let rtn = new Promise(
-		(resolve, reject) => {
-			this._apiService.postUnsecuredAPI(url, data).subscribe(
-				(data) => { 
-					console.log("New Account Saved!");
-					console.log(data);
-
-					resolve(data);
-				}, (err) => {
-					reject(err);
-				});
-		});
-
-	return rtn;
-  }
-
   verifyAndLoginUser(username, password) {
 	let self = this;
-	let url = environment.apiUrl + "/api/verifyCredentials";
+	let url = environment.apiUrl + "/api/authenticate";
 
 	self.promise = new Promise(
 		(resolve, reject) => {
@@ -61,7 +33,7 @@ export class UserService {
   }
 
   getCandidateByEmailOrPhone(query) {
-  	let url = environment.apiUrl + "/api/candidate?q=" + query;
+  	let url = environment.apiUrl + "/api/user?q=" + query;
 
 	let rtn = new Promise(
 		(resolve, reject) => {
@@ -80,7 +52,7 @@ export class UserService {
   }
 
   getCandidateById(id) {
-  	let url = environment.apiUrl + "/api/candidate/" + id;
+  	let url = environment.apiUrl + "/api/user/" + id;
 
 	let rtn = new Promise(
 		(resolve, reject) => {

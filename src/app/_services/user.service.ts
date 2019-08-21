@@ -9,9 +9,14 @@ import { environment } from '../../_environments/environment';
 export class UserService {
 
 	promise = undefined;
+	currentUser = undefined;
 
   constructor(private _apiService: ApiService) {
 
+  }
+
+  getCurrentUser() {
+  	return this.currentUser;
   }
 
   verifyAndLoginUser(username, password) {
@@ -22,7 +27,11 @@ export class UserService {
 		(resolve, reject) => {
 			this._apiService.getWithUsernameAndPassword(url, username, password).subscribe(
 				(userObj) => { 
-					console.log("Credentials Valid!");
+					console.log("Credentials Valid! Setting current user to...");
+					console.log(userObj);
+
+					self.currentUser = userObj;
+
 					resolve(userObj);
 				 }, (err) => {
 				 	reject(err);

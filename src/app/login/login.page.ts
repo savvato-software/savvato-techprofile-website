@@ -29,8 +29,8 @@ export class LoginPage {
               // private splashScreen: SplashScreen,
               private _events: Events) {
 
-              // if ( !environment.production )
-              //  this.user = {id:-1, name: 'eoguser2', password: 'password'};
+              if ( !environment.production )
+                this.user = {id:-1, name: 'dave', password: 'password11'};
   }
 
   ionViewWillEnter() {
@@ -54,7 +54,7 @@ export class LoginPage {
           self.user["name"] = un;
 
           self._loadingService.dismiss().then(() => {
-				this._router.navigate(['/home']);
+				    this._router.navigate(['/home']);
           })
         })
         .catch((err) => {

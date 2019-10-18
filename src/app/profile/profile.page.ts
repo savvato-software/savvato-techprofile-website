@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AttendanceHistoryService } from '../../app/_services/attendance-history.service';
+import { UserService } from '../../app/_services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +12,8 @@ export class ProfilePage implements OnInit {
 
 	attendanceHistoryList = undefined;
 
-	constructor(private _attendanceHistory: AttendanceHistoryService) {
+	constructor(private _attendanceHistoryService: AttendanceHistoryService
+				,private _userService: UserService) {
 
 	}
 
@@ -23,7 +25,7 @@ export class ProfilePage implements OnInit {
 		if (this.attendanceHistoryList === undefined) {
 			this.attendanceHistoryList = null;
 
-			this._attendanceHistory.get().then((list) => {
+			this._attendanceHistoryService.get().then((list) => {
 				this.attendanceHistoryList = list;
 			})
 		}
@@ -31,4 +33,25 @@ export class ProfilePage implements OnInit {
 		return this.attendanceHistoryList;
 	}
 
+	getQuestions(item) {
+		return item.questionGradeList;
+	}
+
+	getSessionString(item) {
+		let date = new Date(item.session.timestamp);
+
+		return date;
+	}
+
+	getUsername() {
+		return this._userService.getCurrentUser()["name"];
+	}
+
+	getEmail() {
+		return this._userService.getCurrentUser()["email"];
+	}
+
+	getPhone() {
+		return this._userService.getCurrentUser()["phone"];
+	}
 }

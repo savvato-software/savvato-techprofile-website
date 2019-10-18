@@ -6,30 +6,32 @@
 
 <ion-content>
 
-	<!--
-		Show...
-
-			a card for each time they attended
-				show the questions asked
-					score they got
-
-	-->
-
-		<ion-card *ngFor="let item of getAttendanceHistoryItems()">
-			<ion-card-content>
-				<div *ngFor="let question of item.getQuestions()">
-					<table>
-						<tr>
-							<td>
-								{{question.text}}
-							</td>
-							<td>
-								{{question.score}}
-							</td>
-						</tr>
-					</table>
-				</div>
-			</ion-card-content>
-		</ion-card>
+	<ion-card>
+		<ion-card-content>
+			<div>
+				Name: {{getUsername()}}<br/>
+				Email: {{getEmail()}}<br/>
+				Phone: {{getPhone()}}<br/>
+			</div>
+		</ion-card-content>
+	</ion-card>
+	<h3>Attendance and Score History</h3>
+	<ion-card *ngFor="let item of getAttendanceHistoryItems()">
+		<ion-card-content>
+			<div>
+				{{getSessionString(item)}}
+			</div>
+			<div *ngFor="let question of getQuestions(item)">
+				<table>
+					<tr>
+						<td>
+							{{question.questionText}}<br/><br/>
+							Your score: {{question.grade}}
+						</td>
+					</tr>
+				</table>
+			</div>
+		</ion-card-content>
+	</ion-card>
 
 </ion-content>

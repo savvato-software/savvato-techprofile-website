@@ -50,7 +50,7 @@ To give permissions for USB debug:
 To run locally:
     - First, you will need the backend running; see the `dtim-techprofile-api` project
     - Then, type these commands for this project..
-        npm install
+        npm ci
         cp src/_environments/environment.dev.ts src/_environments/environment.ts
         ionic serve
 

@@ -72,16 +72,6 @@ export class LoginPage {
     }
   }
 
-  onCreateAccountBtnTap(event) {
-      this._alertService.show({header: 'Hey!',
-           message: 'Thanks for your interest in the Denver Tech Interview Meetup!<br/><br/>Currently, the only way to get an account here is to come to a meeting!<br/><br/>Check <a href="https://www.meetup.com/denver-Tech-Interview-Meetup/">our meetup page</a> for details.<br/>',
-           buttons: [{
-              text: 'OK',
-              handler: () => { }
-            }]
-      });
-  }
-
   onLostPasswordClick(event) {
     let self = this;
     this._alertService.show({

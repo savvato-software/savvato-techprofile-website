@@ -41,6 +41,40 @@ export class UserService {
 	return self.promise;
   }
 
+  updateUserPassword(user, newPassword) {
+	let data = "pw=" + newPassword;
+	let url = environment.apiUrl + "/api/user/" + user['id'];
+
+	return new Promise(
+		(resolve, reject) => {
+			this._apiService.postUnsecuredAPI(url, data).subscribe(
+				(b) => { 
+				 	resolve(b);
+				}, (err) => {
+					reject(err);
+				});
+		});
+  }
+
+  getUserByEmailOrPhone(query) {
+  	let url = environment.apiUrl + "/api/user?q=" + query;
+
+	let rtn = new Promise(
+		(resolve, reject) => {
+			this._apiService.getUnsecuredAPI(url).subscribe(
+				(data) => { 
+					console.log("User query call returned");
+					console.log(data);
+
+					resolve(data);
+				}, (err) => {
+					reject(err);
+				});
+		});
+
+	return rtn;
+  }
+
   getCandidateByEmailOrPhone(query) {
   	let url = environment.apiUrl + "/api/user?q=" + query;
 

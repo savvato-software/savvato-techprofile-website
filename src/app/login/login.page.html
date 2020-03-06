@@ -8,23 +8,13 @@
 		</ion-row>
 		<ion-row>
 			<ion-col>
-				<ion-label color="primary" position="stacked">Username</ion-label>
-				<ion-input type="text" [(ngModel)]="user.name" #ctrl="ngModel" (keyup.enter)="onLoginBtnTap($event)" data-test="usernameInput" required="true"></ion-input>
+				<ion-item>
+				  <ion-label position="floating">Phone (only digits, no symbols) or Email</ion-label>
+				  <ion-input data-test="query-input" (ionChange)="onQueryChange($event)" [value]="getQuery()" required></ion-input>
+				</ion-item>
 
-				<ion-label color="primary" position="stacked">Password</ion-label>
-				<ion-input type="password" [(ngModel)]="user.password" #ctrl="ngModel" (keyup.enter)="onLoginBtnTap($event)"  data-test="passwordInput" required="true"></ion-input>
-			</ion-col>
-		</ion-row>
-		<ion-row>
-			<ion-col>
-				<ion-button class="wideButton" data-test="login-button" (click)="onLoginBtnTap($event)">Login</ion-button>
-			</ion-col>
-		</ion-row>
-		<ion-row>
-			<ion-col>
-				<div id="lostPasswordBtn">
-					<ion-button class="wideButton"  data-test="lost-password-button" (click)="onLostPasswordClick($event)">Lost Your Password?</ion-button>
-				</div>
+				<ion-button class="" [disabled]="!isSearchBtnEnabled()" (click)="onSearchBtnClicked()">Find Me</ion-button>
+				<ion-button class="" (click)="onCancelBtnClicked()">Cancel</ion-button>
 			</ion-col>
 		</ion-row>
 	</ion-grid>

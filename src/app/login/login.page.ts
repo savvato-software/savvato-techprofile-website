@@ -67,8 +67,6 @@ export class LoginPage {
 
     self._userService.getUserByEmailOrPhone(self.query).then((u) => {
        
-      debugger; // is there a password.. yes now create a user fresh no password, and check.
-      
       if (u) {
         self._userService.verifyAndLoginUser(u['name'], this.DEFAULT_PASSWORD).then(() => {
           self._alertService.show({

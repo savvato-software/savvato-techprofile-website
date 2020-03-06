@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-//import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { LoadingController } from '@ionic/angular';
 import { Events } from '@ionic/angular';
 import { Platform } from '@ionic/angular';
+// import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
 import { AlertService } from '../../app/_services/alert.service';
 import { UserService } from '../../app/_services/user.service';
@@ -25,9 +25,8 @@ export class LoginPage {
 
   query = undefined;
   
-  constructor(private _location: Location,
-              private _router: Router,
-              private _route: ActivatedRoute,
+  constructor(private _router : Router,
+              private _location: Location,
               private _alertService: AlertService,
               private _userService: UserService,
               private _loadingService: LoadingService,
@@ -110,7 +109,44 @@ export class LoginPage {
           })
         }).catch(() => {
           // user has a password already
-          this._router.navigate(['/home']);
+
+          self._alertService.show({
+            header: 'Found you!',
+            message: "We found you! What's your password?",
+            inputs: [{
+              name: 'password'
+            }],
+            buttons: [{
+              text: "Cancel",
+              role: 'cancel'
+            }, {
+              text: 'GO!',
+              handler: (data) => {
+                  self._userService.verifyAndLoginUser(u['name'], data.password).then(() => {
+                    self._alertService.show({
+                      header: "Done!",
+                      message: "Cool, you're in!",
+                      buttons: [{
+                        text: "OK",
+                        handler: () => {
+                          this._router.navigate(['/home']);
+                        }
+                      }]
+                    })
+                  }).catch((err) => {
+                    self._alertService.show({
+                      header: "Aargh!",
+                      message: "That's not what we got... :(",
+                      buttons: [{
+                        text: "OK",
+                        handler: () => { }
+                      }]
+                    })
+                  });
+              }
+            }]
+          })
+
         })
 
       } else {
@@ -126,11 +162,9 @@ export class LoginPage {
     })      
   }
 
-  onCancelBtnClicked() {
-    this._location.back();
-  }
-
-
+onCancelBtnClicked() {
+  this._location.back();
+}
 
 ////////
 

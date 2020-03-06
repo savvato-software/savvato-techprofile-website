@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+//import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { LoadingController } from '@ionic/angular';
 import { Events } from '@ionic/angular';
 import { Platform } from '@ionic/angular';
-// import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
 import { AlertService } from '../../app/_services/alert.service';
 import { UserService } from '../../app/_services/user.service';
@@ -24,7 +25,9 @@ export class LoginPage {
 
   query = undefined;
   
-  constructor(private _router : Router,
+  constructor(private _location: Location,
+              private _router: Router,
+              private _route: ActivatedRoute,
               private _alertService: AlertService,
               private _userService: UserService,
               private _loadingService: LoadingService,
@@ -123,7 +126,9 @@ export class LoginPage {
     })      
   }
 
-
+  onCancelBtnClicked() {
+    this._location.back();
+  }
 
 
 

@@ -7,22 +7,9 @@
 </ion-header>
 
 <ion-content padding>
-	<ion-grid>
-		<ion-row>
-			<ion-col>
-				<img id="login-logo-img" data-test="login-logo-img" src="assets/img/dtim-banner.jpg">
-			</ion-col>
-		</ion-row>
-		<ion-row>
-			<ion-col>
-				<ion-button class="wideButton" data-test="show-your-profile-button" (click)="onShowYourProfileBtnTap($event)">Show Your Profile</ion-button>
-			</ion-col>
-		</ion-row>
-		<ion-row>
-			<ion-col>
-				<ion-button class="wideButton"  data-test="change-your-info-button" (click)="onChangeYourInfoBtnTap($event)">Change Your Info</ion-button>
-			</ion-col>
-		</ion-row>
-	</ion-grid>
+	<img id="login-logo-img" data-test="login-logo-img" src="assets/img/dtim-banner.jpg">
+	<ion-item>Welcome, {{ getUserName() }}.</ion-item>
+	<ion-button class="wideButton" data-test="show-your-profile-button" (click)="onShowYourProfileBtnTap($event)">Show Your Profile</ion-button>
+	<ion-button class="wideButton"  data-test="change-your-info-button" (click)="onChangeYourInfoBtnTap($event)">Change Your Info</ion-button>
 </ion-content>
 

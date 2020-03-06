@@ -30,7 +30,7 @@ export class LoginPage {
               private _events: Events) {
 
               if ( !environment.production )
-                this.user = {id:-1, name: 'dave', password: 'password11'};
+                this.user = {id:-1, name: 'dave', password: 'admin'}; // dave is a regular user, not an admin.
   }
 
   ionViewWillEnter() {

@@ -11,6 +11,14 @@ const routes: Routes = [
     path: 'landing',
     loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
   },
+  {
+    path: 'skills-matrix',
+    loadChildren: () => import('./skills-matrix/skills-matrix.module').then( m => m.SkillsMatrixPageModule)
+  },
+  {
+    path: 'career-path',
+    loadChildren: () => import('./career-path/career-path.module').then( m => m.CareerPathPageModule)
+  },
 ];
 
 @NgModule({

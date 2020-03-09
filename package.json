@@ -30,7 +30,7 @@
     "dtim-techprofile": "file:../savvato/src/angular/techprofile-component/dist/dtim-techprofile/dtim-techprofile-0.0.1.tgz",
     "rxjs": "~6.5.1",
     "savvato-javascript-services": "file:../savvato/src/angular/savvato-javascript-services/dist/savvato-javascript-services/savvato-javascript-services-0.0.1.tgz",
-    "savvato-techprofile-user-historical-view": "file:../savvato/src/angular/savvato-techprofile-user-historical-view/dist/savvato-techprofile-user-historical-view",
+    "savvato-techprofile-user-historical-view": "file:../savvato/src/angular/savvato-techprofile-user-historical-view/dist/savvato-techprofile-user-historical-view/savvato-techprofile-user-historical-view-0.0.24.tgz",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },

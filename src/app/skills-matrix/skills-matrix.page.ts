@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
+import { UserService } from '../_services/user.service'
 import { FunctionPromiseService } from 'savvato-javascript-services'
 
 import { environment } from '../../_environments/environment'
@@ -16,7 +17,8 @@ export class SkillsMatrixPage implements OnInit {
 
 	constructor(private _functionPromiseService: FunctionPromiseService,
 			    private _router: Router,
-			    private _route: ActivatedRoute
+			    private _route: ActivatedRoute,
+			    private _userService: UserService
 				) { 
 
 	}
@@ -29,8 +31,14 @@ export class SkillsMatrixPage implements OnInit {
 						resolve({
 							getEnv: () => {
 								return environment;
+							},
+							getUser: () => {
+								return self._userService.getCurrentUser();
+							},
+							getRoutePrefix: () => {
+								return "skills-matrix";
 							}
-					})
+					});
 				})
 			})
 		})

@@ -8,12 +8,15 @@ import { CareerPathPageRoutingModule } from './career-path-routing.module';
 
 import { CareerPathPage } from './career-path.page';
 
+import { SavvatoCareerpathComponentModule } from 'savvato-careerpath-component';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CareerPathPageRoutingModule
+    CareerPathPageRoutingModule,
+    SavvatoCareerpathComponentModule
   ],
   declarations: [CareerPathPage]
 })

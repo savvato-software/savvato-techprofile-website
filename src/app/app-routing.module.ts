@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./skills-matrix/skills-matrix.module').then( m => m.SkillsMatrixPageModule)
   },
   {
-    path: 'career-path',
+    path: 'career-goal',
     loadChildren: () => import('./career-path/career-path.module').then( m => m.CareerPathPageModule)
   },
 ];

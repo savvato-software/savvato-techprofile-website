@@ -1,9 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>career-path</ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-title>career-goal</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content>
+	<ion-item>
+		<ion-label>Chosen Career Goal:</ion-label>
+		<ion-select placeholder="Select One" slot="start" interface="popover" [(ngModel)]="selectedCareerGoal" (ionChange)="onSelectedCareerGoalChange($event)">
+			<ion-select-option *ngFor="let cg of getAllCareerGoals()" value="{{cg['id']}}">{{cg.name}}</ion-select-option>
+		</ion-select>
+	</ion-item>
 
+	<lib-savvato-careerpath-component [ctrl]="getCareerPathComponentController()"></lib-savvato-careerpath-component>
 </ion-content>

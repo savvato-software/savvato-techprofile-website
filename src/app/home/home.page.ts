@@ -21,7 +21,7 @@ export class HomePage {
   }
 
   onShowCareerPathBtnTap($event) {
-    this._router.navigate(['/career-path'])
+    this._router.navigate(['/career-goal'])
   }
 
   onShowSkillsMatrixBtnTap($event) {

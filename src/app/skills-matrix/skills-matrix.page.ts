@@ -13,6 +13,10 @@ import { environment } from '../../_environments/environment'
 })
 export class SkillsMatrixPage implements OnInit {
 
+
+	// TODO: SkillsMatrixPage and CareerPathPage need to be in the same folder. They are very related.
+
+
 	funcKey = "skillsMatrixPageController"
 
 	constructor(private _functionPromiseService: FunctionPromiseService,

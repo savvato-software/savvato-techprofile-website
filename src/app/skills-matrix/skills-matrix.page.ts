@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import { UserService } from '../_services/user.service'
-import { FunctionPromiseService } from 'savvato-javascript-services'
+import { FunctionPromiseService } from '@savvato-software/savvato-javascript-services'
 
 import { environment } from '../../_environments/environment'
 

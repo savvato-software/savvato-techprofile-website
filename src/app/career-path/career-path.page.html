@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-	<ion-item>
+	<ion-item *ngIf="!careerGoalIsSelected()">
 		<ion-label>Chosen Career Goal:</ion-label>
 		<ion-select placeholder="Select One" slot="start" interface="popover" [(ngModel)]="selectedCareerGoal" (ionChange)="onSelectedCareerGoalChange($event)">
 			<ion-select-option *ngFor="let cg of getAllCareerGoals()" value="{{cg['id']}}">{{cg.name}}</ion-select-option>

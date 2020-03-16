@@ -3,8 +3,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import { AlertService } from '../_services/alert.service'
 import { UserService } from '../_services/user.service'
-import { CareerGoalService } from 'savvato-javascript-services'
-import { FunctionPromiseService } from 'savvato-javascript-services'
+import { CareerGoalService } from '@savvato-software/savvato-javascript-services'
+import { FunctionPromiseService } from '@savvato-software/savvato-javascript-services'
 
 import { environment } from '../../_environments/environment'
 
@@ -99,5 +99,9 @@ export class CareerPathPage implements OnInit {
 		self._careerGoalService.getCareerGoalById(evt.currentTarget.value).then((cg) => {
 			self.careerGoal = cg;
 		});
+	}
+
+	careerGoalIsSelected() {
+		return !!this.careerGoal;
 	}
 }

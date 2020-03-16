@@ -27,11 +27,11 @@
     "cordova-browser": "^6.0.0",
     "core-js": "^2.5.4",
     "cypress": "3.8.3",
-    "dtim-techprofile": "file:../savvato/src/angular/techprofile-component/dist/dtim-techprofile/dtim-techprofile-0.0.2.tgz",
+    "@savvato-software/dtim-techprofile-component": "0.0.2",
     "rxjs": "~6.5.1",
     "savvato-careerpath-component": "file:../savvato/src/angular/savvato-careerpath-component/dist/savvato-careerpath-component/savvato-careerpath-component-0.0.45.tgz",
     "@savvato-software/savvato-javascript-services": "0.0.6",
-    "savvato-techprofile-user-historical-view": "file:../savvato/src/angular/savvato-techprofile-user-historical-view/dist/savvato-techprofile-user-historical-view/savvato-techprofile-user-historical-view-0.0.25.tgz",
+    "@savvato-software/savvato-techprofile-user-historical-view": "0.0.27",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },

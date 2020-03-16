@@ -8,7 +8,7 @@ import { SkillsMatrixPageRoutingModule } from './skills-matrix-routing.module';
 
 import { SkillsMatrixPage } from './skills-matrix.page';
 
-import { SavvatoTechprofileUserHistoricalViewModule } from 'savvato-techprofile-user-historical-view';
+import { SavvatoTechprofileUserHistoricalViewModule } from '@savvato-software/savvato-techprofile-user-historical-view';
 
 @NgModule({
   imports: [

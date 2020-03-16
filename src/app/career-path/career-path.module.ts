@@ -8,7 +8,7 @@ import { CareerPathPageRoutingModule } from './career-path-routing.module';
 
 import { CareerPathPage } from './career-path.page';
 
-import { SavvatoCareerpathComponentModule } from 'savvato-careerpath-component';
+import { SavvatoCareerpathComponentModule } from '@savvato-software/savvato-careerpath-component';
 
 @NgModule({
   imports: [

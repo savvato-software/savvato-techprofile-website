@@ -29,7 +29,7 @@
     "cypress": "3.8.3",
     "@savvato-software/dtim-techprofile-component": "0.0.2",
     "rxjs": "~6.5.1",
-    "savvato-careerpath-component": "file:../savvato/src/angular/savvato-careerpath-component/dist/savvato-careerpath-component/savvato-careerpath-component-0.0.45.tgz",
+    "@savvato-software/savvato-careerpath-component": "0.0.47",
     "@savvato-software/savvato-javascript-services": "0.0.6",
     "@savvato-software/savvato-techprofile-user-historical-view": "0.0.27",
     "tslib": "^1.9.0",

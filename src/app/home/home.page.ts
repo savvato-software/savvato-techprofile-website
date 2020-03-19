@@ -20,12 +20,15 @@ export class HomePage {
     return user && user['name'];
   }
 
-  onShowCareerPathBtnTap($event) {
+  onShowCareerPathBtnTap(evt) {
     this._router.navigate(['/career-goal'])
   }
 
-  onShowSkillsMatrixBtnTap($event) {
+  onShowSkillsMatrixBtnTap(evt) {
     this._router.navigate(['/skills-matrix'])
   }
 
+  onEditUserInfoBtnTap(evt) {
+    this._router.navigate(['/edit-user-info'])
+  }
 }

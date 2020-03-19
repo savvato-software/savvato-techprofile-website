@@ -1,35 +1,35 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-title>
+			<img id="home-logo-img" data-test="home-logo-img" src="assets/img/dtim-banner.jpg">
+		</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-	<img id="login-logo-img" data-test="login-logo-img" src="assets/img/dtim-banner.jpg">
+	<!-- <img id="login-logo-img" data-test="login-logo-img" src="assets/img/dtim-banner.jpg"> -->
 	<ion-item>Welcome, {{ getUserName() }}.</ion-item>
 
-	<ion-item>
-		With this website, you can view the history of questions we've asked you. You can also see where else it is you need to go. With time, and as we work together, you can see where you are strong, and where you need more work. We can use that info as you code with us, to get you the experience you need. This is your key to our process. It is an input to our function, and what we output is the opportunity for you to put in some resume worthy work, with the goal of putting you in a better place to get your next job, and regardless strengthening you as a developer, improving your key, and helping us to improve as we help others to become better developers as well. There is a demand for software engineers and a glut of opportunities to learn the skills of software engineering. That's what we hope to address.
-	</ion-item>
+	<ion-card>
+		<ion-item>You can view your question history, as it relates to <br/><br/>
+		</ion-item>
 
-	<ion-item>
-		There are two tools. Both can help you see the larger picture. Which you depend on more probably has to do with where you are in your career.<br/><br/>
-	</ion-item>
-	<ion-item>
-		<ion-grid>
-			<ion-row>
-				<ion-col>
-					Career Paths are roadmaps from where you are in your career, to where you want to go.<br/><br/>
-					<ion-button class="wideButton" data-test="show-your-profile-button" (click)="onShowCareerPathBtnTap($event)">Your Career Path</ion-button>
-				</ion-col>
-				<ion-col>
-					The skills matrix, is a matrix of skills employers search for in potential employees, and levels of ability. At the intersection, are questions you should be able to answer comfortably, habits you should have, experiences you should have attained, etc. The skills matrix is better if you have some experience already, and want to direct your career so as to attain other unique experiences.<br/><br/>
-					<ion-button class="wideButton" data-test="show-your-profile-button" (click)="onShowSkillsMatrixBtnTap($event)">Your Skills Matrix</ion-button>
-				</ion-col>
-			</ion-row>
-		</ion-grid>
-	</ion-item>
+		<div class="btnIcon">
+			<ion-icon data-test="show-your-profile-button" (click)="onShowCareerPathBtnTap($event)" slot="start" name="compass"></ion-icon>
+			<span>Your Career Path</span>
+		</div>
+
+		<div class="btnIcon">
+			<ion-icon data-test="show-your-profile-button" (click)="onShowSkillsMatrixBtnTap($event)" slot="start" name="grid"></ion-icon>
+			<span>Your Skills Matrix</span>
+		</div>
+
+		<br/>
+		<div class="btnIcon settingsBtn">
+			<ion-icon data-test="show-your-profile-button" (click)="onEditUserInfoBtnTap($event)" slot="start" name="settings"></ion-icon>
+			<span>Edit Your Info</span>
+		</div>
+	</ion-card>
+
 </ion-content>
 

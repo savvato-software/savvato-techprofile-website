@@ -1,22 +1,16 @@
 
 <ion-content padding>
-	<ion-grid>
-		<ion-row>
-			<ion-col>
-				<img id="login-logo-img" data-test="login-logo-img" src="assets/img/dtim-banner.jpg">
-			</ion-col>
-		</ion-row>
-		<ion-row>
-			<ion-col>
-				<ion-item>
-				  <ion-label position="floating">Phone (only digits, no symbols) or Email</ion-label>
-				  <ion-input data-test="query-input" (ionChange)="onQueryChange($event)" [value]="getQuery()" required></ion-input>
-				</ion-item>
+	<img id="login-logo-img" class="centered logo" data-test="login-logo-img" src="assets/img/dtim-banner.jpg">
 
-				<ion-button class="" [disabled]="!isSearchBtnEnabled()" (click)="onSearchBtnClicked()">Find Me</ion-button>
-				<ion-button class="" (click)="onCancelBtnClicked()">Cancel</ion-button>
-			</ion-col>
-		</ion-row>
-	</ion-grid>
+	<ion-item class="inputbox">
+		<ion-label position="floating">Phone (only digits, no symbols) or Email</ion-label>
+		<ion-input data-test="query-input" (ionChange)="onQueryChange($event)" [value]="getQuery()" required></ion-input>
+	</ion-item>
+
+	<div class="centered buttonbox">
+		<ion-button class="" [disabled]="!isSearchBtnEnabled()" (click)="onSearchBtnClicked()">Find Me</ion-button>
+		<br/>--<br/>
+		<ion-button class="" (click)="onCancelBtnClicked()">Cancel</ion-button>
+	</div>
 </ion-content>
 

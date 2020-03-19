@@ -23,4 +23,8 @@ export class LandingPage implements OnInit {
 	onLoginBtnTap(evt) {
 		this._router.navigate(['/login']);
 	}
+
+	onAboutBtnTap(evt) {
+		this._router.navigate(['/about']);
+	}
 }

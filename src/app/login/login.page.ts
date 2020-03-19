@@ -37,7 +37,7 @@ export class LoginPage {
 
               if ( !environment.production ) {
                 this.user = {id:-1, name: 'dave', password: 'admin'}; // dave is a regular user, not an admin.
-                this.query = "sally@sally.com"
+                this.query = "dave@dave.com"
               }
   }
 

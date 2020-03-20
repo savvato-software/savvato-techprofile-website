@@ -27,7 +27,7 @@
     "@savvato-software/dtim-techprofile-component": "0.0.2",
     "@savvato-software/savvato-careerpath-component": "file:../savvato/src/angular/savvato-careerpath-component/dist/savvato-careerpath-component/savvato-software-savvato-careerpath-component-0.0.77.tgz",
     "@savvato-software/savvato-javascript-services": "0.0.6",
-    "@savvato-software/savvato-techprofile-user-historical-view": "0.0.28",
+    "@savvato-software/savvato-techprofile-user-historical-view": "0.0.37",
     "cordova-browser": "^6.0.0",
     "core-js": "^2.5.4",
     "cypress": "3.8.3",

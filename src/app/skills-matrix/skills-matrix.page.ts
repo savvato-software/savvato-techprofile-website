@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { UserService } from '../_services/user.service'
 import { FunctionPromiseService } from '@savvato-software/savvato-javascript-services'
@@ -22,6 +23,7 @@ export class SkillsMatrixPage implements OnInit {
 	constructor(private _functionPromiseService: FunctionPromiseService,
 			    private _router: Router,
 			    private _route: ActivatedRoute,
+			    private _location: Location,
 			    private _userService: UserService
 				) { 
 
@@ -52,4 +54,7 @@ export class SkillsMatrixPage implements OnInit {
 		return this._functionPromiseService.waitAndGet(this.funcKey, this.funcKey, { });		
 	}
 
+	onBackBtnClicked() {
+		this._location.back();
+	}
 }

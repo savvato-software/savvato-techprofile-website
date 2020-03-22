@@ -2,4 +2,5 @@
 
 ionic cordova build browser --release    # build the content for the webserver to put the app on the internet
 
+    if you want to put it at a location other than the root (for instance, http://domain.com/app, instead of http://domain.com), you will need to go to the generated index.html file (its in www/) and change the base-href to the appropriate directory ('/app/' instead of the default '/')
 
